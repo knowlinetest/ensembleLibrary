@@ -26,6 +26,7 @@ import weka.classifiers.AbstractClassifier;
 import weka.classifiers.EnsembleLibraryModel;
 import weka.classifiers.meta.ensembleSelection.EnsembleSelectionLibrary;
 import weka.core.Utils;
+import weka.core.WekaPackageClassLoaderManager;			// mjh 07.10.17
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -72,6 +73,10 @@ import javax.swing.event.ChangeListener;
 public class DefaultModelsPanel 
   extends JPanel 
   implements ActionListener, ChangeListener {
+  
+  /** For current WekaPackageManager class loading - mjh 07.10.17 */
+  private static final WekaPackageClassLoaderManager pkgLoaderMgr = 
+  		WekaPackageClassLoaderManager.getWekaPackageClassLoaderManager();
   
   /** for serialization */
   private static final long serialVersionUID = -6123488873592563339L;
@@ -155,9 +160,10 @@ public class DefaultModelsPanel
     
     try {
       System.out.println("package name: " + getPackageName());
-      
+      ClassLoader cl = pkgLoaderMgr.findClassloaderForResource(getPackageName()
+      + PROPERTY_FILE);
       DEFAULT_PROPERTIES = Utils.readProperties(getPackageName()
-	  + PROPERTY_FILE);
+	  + PROPERTY_FILE,cl);
       java.util.Enumeration keys = (java.util.Enumeration) DEFAULT_PROPERTIES
       .propertyNames();
       if (!keys.hasMoreElements()) {

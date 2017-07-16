@@ -47,6 +47,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JTabbedPane;
 import javax.swing.KeyStroke;
 import javax.swing.ListSelectionModel;
+import javax.swing.SwingWorker;				// mjh 07.16.17
 import javax.swing.ToolTipManager;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
@@ -295,50 +296,47 @@ public class LoadModelsPanel
    */
   public void loadModels() {
     
-    ModelList.SortedListModel dataModel = ((ModelList.SortedListModel) m_ModelList.getModel());
-    
-    int directoryCount = 0;
-    int modelCount = 0;
-    
-    dataModel.clear();
-    
-    File directory = m_Library.getWorkingDirectory();
-    File subDirectories[] = directory.listFiles();
-    
-    if (subDirectories != null) {
-      
-      for (int i = 0; i < subDirectories.length; i++) {
-	
-	if (subDirectories[i].isDirectory()
-	    && subDirectories[i].getName().matches(
-	    ".*_instances_.*")) {
+    ModelLoader ml = new ModelLoader();
+    ml.execute();
+  }
+  
+  class ModelLoader extends SwingWorker<Void, Void> {		// mjh 07.16.17
+  
+  	@Override
+    public Void doInBackground() {    
+		ModelList.SortedListModel dataModel = ((ModelList.SortedListModel) m_ModelList.getModel());	
+		int directoryCount = 0;
+		int modelCount = 0;
+		dataModel.clear();
+		File directory = m_Library.getWorkingDirectory();
+		File subDirectories[] = directory.listFiles();
+		if (subDirectories != null) {
+		  for (int i = 0; i < subDirectories.length; i++) {	
+			if (subDirectories[i].isDirectory()
+				&& subDirectories[i].getName().matches(".*_instances_.*")) {	  
+				  directoryCount++;
+				  File[] subDirectoryFiles = subDirectories[i].listFiles();	  
+				  for (int j = 0; j < subDirectoryFiles.length; j++) {		
+					if (subDirectoryFiles[j].getName().matches(".*.elm")) {		  
+					  EnsembleSelectionLibraryModel model = EnsembleSelectionLibraryModel
+					  .loadModel(subDirectoryFiles[j].getPath());
 	  
-	  directoryCount++;
+					  // get those Classifier[] objects garbage collected!
+					  model.releaseModel();
 	  
-	  File[] subDirectoryFiles = subDirectories[i].listFiles();
-	  
-	  for (int j = 0; j < subDirectoryFiles.length; j++) {
-	    
-	    if (subDirectoryFiles[j].getName().matches(".*.elm")) {
-	      
-	      EnsembleSelectionLibraryModel model = EnsembleSelectionLibraryModel
-	      .loadModel(subDirectoryFiles[j].getPath());
-	      
-	      // get those Classifier[] objects garbage collected!
-	      model.releaseModel();
-	      
-	      if (!dataModel.contains(model)) {
-		
-		modelCount++;
-		dataModel.add(model);
-	      }
-	    }
-	  }
-	}
-      }
-    }
+					  if (!dataModel.contains(model)) {
+						modelCount++;
+						dataModel.add(model);
+					  }
+					}
+			  	  }
+			 }
+      	  }
+    	}
     
-    updateLoadingLabel(modelCount, directoryCount);
+    	updateLoadingLabel(modelCount, directoryCount);
+    	return null;
+  	}
   }
   
   /**

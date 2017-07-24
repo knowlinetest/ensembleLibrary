@@ -133,6 +133,7 @@ public class ModelBag
   public ModelBag(double models[][][], double bag_percent, boolean debug) {
     m_debug = debug;
     if (models.length == 0) {
+      new Exception("ModelBag model length 0").printStackTrace();
       throw new IllegalArgumentException(
       "ModelBag needs at least 1 model.");
     }

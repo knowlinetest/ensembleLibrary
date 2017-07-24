@@ -337,7 +337,7 @@ public class EnsembleSelection
    * "embedded" fashion described by Caruana, Niculescu, and Munson
    * (unpublished work - tech report forthcoming)
    */
-  protected int m_NumFolds = 1;
+  protected int m_NumFolds = 5;
   
   /**
    * Returns a string describing classifier
@@ -1480,7 +1480,23 @@ public class EnsembleSelection
     boolean success = false;
     
     int i = 1;
-    
+    // mjh 
+    File wekafiles = new File(System.getProperty("user.home"),"wekafiles");
+    if (wekafiles.exists()) {
+    	File packagesStore = new File(wekafiles,"packagesStore");
+    	if (!packagesStore.exists()) {
+    		if (!packagesStore.mkdir()) 
+    			throw new IllegalStateException("Unable to create packagesStore");
+    	}
+		File ensembleStore = new File(packagesStore,"ensembleLibrary");
+		if (!ensembleStore.exists()) {
+			if (!ensembleStore.mkdir())
+				throw new IllegalStateException("Unable to create ensembleStore");
+		}
+		success = true;
+		defaultDirectory = ensembleStore.getPath();
+    }
+/* Previous code
     while (i < MAX_DEFAULT_DIRECTORIES && !success) {
       
       File f = new File(System.getProperty("user.home"), "Ensemble-" + i);
@@ -1492,7 +1508,7 @@ public class EnsembleSelection
       i++;
       
     }
-    
+*/    
     if (!success) {
       defaultDirectory = new String("");
       // should we print an error or something?

@@ -295,7 +295,6 @@ public class LoadModelsPanel
    * directory into the ModelList object
    */
   public void loadModels() {
-    
     ModelLoader ml = new ModelLoader();
     ml.execute();
   }

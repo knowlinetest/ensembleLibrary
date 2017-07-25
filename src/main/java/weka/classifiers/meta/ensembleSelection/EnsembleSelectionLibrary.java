@@ -183,7 +183,7 @@ public class EnsembleSelectionLibrary
    * Sets the validation-set ratio.  This is the portion of the
    * training set that is set aside for hillclimbing.  Note that
    * this value is ignored if we are doing cross-validation
-   * (indicated by the number of folds being > 1).
+   * (indicated by the number of folds being &gt; 1).
    *  
    * @param validationRatio	the new ratio
    */
@@ -193,7 +193,7 @@ public class EnsembleSelectionLibrary
   
   /**
    * Set the number of folds for cross validation.  If the number
-   * of folds is > 1, the validation ratio is ignored.
+   * of folds is &gt; 1, the validation ratio is ignored.
    * 
    * @param numFolds		the number of folds to use
    */
@@ -202,12 +202,12 @@ public class EnsembleSelectionLibrary
   }
   
   /**
-   * This method will iterate through the TreeMap of models and
+   * <p>This method will iterate through the TreeMap of models and
    * train all models that do not currently exist (are not 
    * yet trained). 
-   * <p/>
-   * Returns the data set which should be used for hillclimbing.
-   * <p/>
+   * </p>
+   * <p>Returns the data set which should be used for hillclimbing.
+   * </p>
    * If training a model fails then an error will
    * be sent to stdout and that model will be removed from the 
    * TreeMap.   FIXME Should we maybe raise an exception instead?

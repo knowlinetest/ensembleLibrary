@@ -53,7 +53,7 @@ import javax.swing.ToolTipManager;
 import javax.swing.tree.DefaultTreeModel;
 
 /**
- * The purpose of this class is to create a user interface that will
+ * <p>The purpose of this class is to create a user interface that will
  * provide an intuitive method of building "playlists" of weka 
  * classifiers to be trained.  The main gui consists of two parts: the
  * top and bottom. The top will use a JTree to show all of the options
@@ -62,8 +62,8 @@ import javax.swing.tree.DefaultTreeModel;
  * to quickly access all of the available options at different levels.
  * The bottom half of the gui will show the current "playlist" of 
  * chosen models that the user can opt to add to the current library.  
- * <p/>
- * The overall concept is that users will use the tree to specify 
+ * </p>
+ * <p>The overall concept is that users will use the tree to specify 
  * combinations of options to the currently selected classifier type.
  * then they will use the "generate models" button to generate a set
  * models from the selected options. This can be done many times with
@@ -71,13 +71,13 @@ import javax.swing.tree.DefaultTreeModel;
  * list in the bottom half of the gui.  Once the user is satisfied
  * with their list of models they are provided a button to "add all 
  * models" to the model library displayed by the ListModelsPanel.
- * <p/>
- * Note that there are currently 9 different classes that implement
+ * </p>
+ * <p>Note that there are currently 9 different classes that implement
  * tree nodes and tree node editors created to support this class
  * in modelling/rendering weka classifier parameters. see 
  * appropriate classes for details.  They currently reside in the 
  * weka.gui.libraryEditor.tree package.
- * <p/>
+ * </p>
  * To instantiate the treeModel:
  * <ul>
  *   <li>ModelNodeEditor</li>
@@ -96,15 +96,15 @@ import javax.swing.tree.DefaultTreeModel;
  *   <li>DefaultNode</li>
  * </ul>
  * 
- * These classes are responsible for 
+ * <p>These classes are responsible for 
  * representing the different kinds of tree nodes that will be 
  * contained in the JTree object, as well as the renderers and editors
  * that will be responsible for displaying their properties in the
  * user interface.  
- * <p/>
- * Code for this class was inspired and partly borrowed from the 
+ * </p>
+ * <p>Code for this class was inspired and partly borrowed from the 
  * following excellent tutorial on creating custom JTree renderers 
- * and editors authored by John Zukowski: <br/>
+ * and editors authored by John Zukowski: </p>
  * <a href="http://www.java2s.com/ExampleCode/Swing-JFC/CheckBoxNodeTreeSample.htm" target="_blank">http://www.java2s.com/ExampleCode/Swing-JFC/CheckBoxNodeTreeSample.htm</a>
  * 
  * @author  Robert Jung (mrbobjung@gmail.com)

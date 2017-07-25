@@ -24,7 +24,7 @@ package weka.gui.ensembleLibraryEditor.tree;
 /**
  * A custom Exception that is thrown when a user specifies an invalid
  * set of parameters to the LibraryEditor Tree GUI.  This covers things
- * like specifying a range of numerical values with the min being > than
+ * like specifying a range of numerical values with the min being &gt; than
  * the max, etc...
  * 
  * @author  Robert Jung (mrbobjung@gmail.com)

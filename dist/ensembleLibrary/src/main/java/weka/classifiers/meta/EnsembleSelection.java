@@ -399,7 +399,7 @@ public class EnsembleSelection
     
     result.addElement(new Option(
 	"\tSets the number of cross-validation folds.", 
-	"X", 1, "-X <numFolds>"));
+	"X", 5, "-X <numFolds>"));
     
     result.addElement(new Option(
 	"\tSpecify the metric that will be used for model selection \n"

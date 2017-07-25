@@ -38,15 +38,15 @@ import javax.swing.JPanel;
 import javax.swing.JTabbedPane;
 
 /**
- * Class for editing Library objects. Brings up a custom editing panel for the
+ * <p>Class for editing Library objects. Brings up a custom editing panel for the
  * user to edit the library model list, as well as save load libraries from
  * files.
- * <p/>
- * A model list file is simply a flat file with a single classifier on each
+ * </p>
+ * <p>A model list file is simply a flat file with a single classifier on each
  * line. Each of these classifier is represented by the command line string that
  * would be used to create that specific model with the specified set of
  * paramters.
- * <p/>
+ * </p>
  * This code in class is based on other custom editors in weka.gui such as the
  * CostMatrixEditor to try and maintain some consistency throughout the package.
  * 
@@ -188,7 +188,7 @@ public class EnsembleLibraryEditor
    * 
    * @param text
    *            ignored
-   * @throws always throws an IllegalArgumentException
+   * @throws IllegalArgumentException always thrown
    */
   public void setAsText(String text) {
     throw new IllegalArgumentException("LibraryEditor: "

@@ -44,11 +44,11 @@ import javax.swing.tree.TreeCellEditor;
 import javax.swing.tree.TreePath;
 
 /**
- * This class is in charge of dynamically creating editor GUI objects on
+ * <p>This class is in charge of dynamically creating editor GUI objects on
  * demand for the main JTree class that will display our Classifier tree
  * model of parameters.  This is in fact the CellEditor class that is
  * registered with our tree.
- * <p/>
+ * </p>
  * Basically it delegates much of the work to the various NodeEditor 
  * classes found in this package. All it really has to do is detect 
  * what of node it is and then instantiate an editor of the appropriate

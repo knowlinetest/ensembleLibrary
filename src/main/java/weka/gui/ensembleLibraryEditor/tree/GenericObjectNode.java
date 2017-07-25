@@ -188,8 +188,7 @@ public class GenericObjectNode
   /**
    * A setter for the GenericObjectNodeEditor for this node
    * 
-   * @param Editor A new GenericObjectNodeEditor
-   * @return		void
+   * @param editor  A new GenericObjectNodeEditor
    */
     // SRT
   public void setNodeEditor(GenericObjectNodeEditor editor) {
@@ -314,14 +313,14 @@ public class GenericObjectNode
   }
   
   /**
-   * This method uses introspection to programatically discover all of 
+   * <p>This method uses introspection to programatically discover all of 
    * the parameters for this generic object.  For each one of them it
    * uses the TreeModel reference to create a new subtree to represent
    * that parameter and its value ranges.  Note that all of these nodes
    * are PropertyNodes which themselves hold the logic of figuring out
    * what type of parameter it is they are representing and thus what 
    * type of subtree to build.
-   * <p/> 
+   * </p> 
    * We need to be careful because this was molded from the code inside of 
    * the PropertySheetPanel class.  Which means that we are wide open
    * to copy/paste problems.  In the future, when that code changes to 

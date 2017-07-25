@@ -29,11 +29,11 @@ import weka.core.RevisionUtils;
 import java.util.Random;
 
 /**
- * This class is responsible for the duties of a bag of models. It is designed
+ * <p>This class is responsible for the duties of a bag of models. It is designed
  * for use with the EnsembleSelection meta classifier. It handles shuffling the
  * models, doing sort initialization, performing forward selection/ backwards
  * elimination, etc.
- * <p/>
+ * </p>
  * We utilize a simple "virtual indexing" scheme inside. If we shuffle and/or
  * sort the models, we change the "virtual" order around. The elements of the
  * bag are always those elements with virtual index 0..(m_bagSize-1). Each

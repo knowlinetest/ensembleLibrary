@@ -70,8 +70,8 @@ import java.util.zip.GZIPOutputStream;
 
 /**
  <!-- globalinfo-start -->
- * Combines several classifiers using the ensemble selection method. For more information, see: Caruana, Rich, Niculescu, Alex, Crew, Geoff, and Ksikes, Alex, Ensemble Selection from Libraries of Models, The International Conference on Machine Learning (ICML'04), 2004.  Implemented in Weka by Bob Jung and David Michael.
- * <p/>
+ * <p>Combines several classifiers using the ensemble selection method. For more information, see: Caruana, Rich, Niculescu, Alex, Crew, Geoff, and Ksikes, Alex, Ensemble Selection from Libraries of Models, The International Conference on Machine Learning (ICML'04), 2004.  Implemented in Weka by Bob Jung and David Michael.
+ * </p>
  <!-- globalinfo-end -->
  *
  <!-- technical-bibtex-start -->
@@ -84,17 +84,17 @@ import java.util.zip.GZIPOutputStream;
  *    year = {2004}
  * }
  * </pre>
- * <p/>
+ * 
  <!-- technical-bibtex-end -->
- *
+ *<p>
  * Our implementation of ensemble selection is a bit different from the other
  * classifiers because we assume that the list of models to be trained is too 
  * large to fit in memory and that our base classifiers will need to be
  * serialized to the file system (in the directory listed in the "workingDirectory
  * option).  We have adopted the term "model library" for this large set of 
  * classifiers keeping in line with the original paper. 
- * <p/>
- * 
+ * </p>
+ * <p>
  * If you are planning to use this classifier, we highly recommend you take a 
  * quick look at our FAQ/tutorial on the WIKI.  There are a few things that
  * are unique to this classifier that could trip you up.  Otherwise, this
@@ -102,17 +102,17 @@ import java.util.zip.GZIPOutputStream;
  * having to do too much parameter tuning.  What is nice is that in the worst 
  * case you get a nice summary of how s large number of diverse models 
  * performed on your data set.  
- * <p/>
+ * </p>
  * 
- * This class relies on the package weka.classifiers.meta.ensembleSelection. 
- * <p/>
+ * <p>This class relies on the package weka.classifiers.meta.ensembleSelection. 
+ * </p>
  * 
- * When run from the Explorer or another GUI, the classifier depends on the
+ * <p>When run from the Explorer or another GUI, the classifier depends on the
  * package weka.gui.libraryEditor. 
- * <p/>
+ * </p>
  *
  <!-- options-start -->
- * Valid options are: <p/>
+ * <p>Valid options are: </p>
  * 
  * <pre> -L &lt;/path/to/modelLibrary&gt;
  *  Specifies the Model Library File, continuing the list of all models.</pre>
@@ -474,7 +474,7 @@ public class EnsembleSelection
   
   /**
    <!-- options-start -->
-   * Valid options are: <p/>
+   *<p> Valid options are: </p>
    * 
    * <pre> -L &lt;/path/to/modelLibrary&gt;
    *  Specifies the Model Library File, continuing the list of all models.</pre>

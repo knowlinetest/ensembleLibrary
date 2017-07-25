@@ -43,7 +43,7 @@ import java.util.Date;
 import java.util.zip.Adler32;
 
 /**
- * This class represents a library model that is used for EnsembleSelection. At
+ * <p>This class represents a library model that is used for EnsembleSelection. At
  * this level the concept of cross validation is abstracted away. This class
  * keeps track of the performance statistics and bookkeeping information for its
  * "model type" accross all the CV folds. By "model type", I mean the
@@ -53,7 +53,7 @@ import java.util.zip.Adler32;
  * will keep track of their performances accordingly. This class also has
  * methods to deal with serializing all of this information into the .elm file
  * that will represent this model.
- * <p/>
+ * </p>
  * Also it is worth mentioning that another important function of this class is
  * to track all of the dataset information that was used to create this model.
  * This is because we want to protect users from doing foreseeably bad things.

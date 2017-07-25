@@ -113,18 +113,18 @@ public class ModelList
   
   /**
    * 
-   * This is a helper class that creates a custom list model for the ModelList class.
+   * <p>This is a helper class that creates a custom list model for the ModelList class.
    * It basically ensures that all model entries are 1) unique - so that no duplicate
    * entries can find their way in, and 2) sorted alphabetically.  It also numbers 
    * them.
-   * <p/>
-   * This nested class was adapted from code found in a freely available tutorial on
+   * </p>
+   * <p>This nested class was adapted from code found in a freely available tutorial on
    * sorting JList entries by John Zukowski - wait a sec, he's the guy who wrote the
    * other tutorial I cited in the AddModelsPanel. wow, different web site even. 
    * This guy is really in to writing tutorials.  Anyway, it was very helpful, if 
    * you would like to know more about implementing swing MVC stuff.
-   * <p/>
-   * Anyway, John Zukowski's tutorial can be found at: <br/>
+   * </p>
+   * <p>Anyway, John Zukowski's tutorial can be found at: </p>
    * <a href="http://www.jguru.com/faq/view.jsp?EID=15245" target="_blank">http://www.jguru.com/faq/view.jsp?EID=15245</a>
    */
   public class SortedListModel extends AbstractListModel {
